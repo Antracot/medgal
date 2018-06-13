@@ -1,0 +1,2 @@
+# medgal
+medgal charity organization
