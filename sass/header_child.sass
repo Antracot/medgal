@@ -1,0 +1,292 @@
+@import "vars.sass"
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	::after
+		content: " "
+		display: block
+		width: 100%
+		height: 0
+		clear: both
+
+body
+	width: 100%
+	// background-color: $background
+	color: #fff
+	overflow-x: hidden
+	position: relative
+
+body.modal-open
+	overflow: hidden
+
+.popup_image
+	height: 100%
+	width: 100%
+	position: fixed
+	margin: auto
+	left: 0
+	right: 0
+	bottom: 0
+	top: 0
+	background-color: rgba(0, 0, 0, 0.8)
+	z-index: 500
+	display: none
+	.image_wrapper
+		height: 90%
+		width: 90%
+		// background-color: #fff
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
+		img
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin: auto
+			border-radius: 10px
+			overflow: hidden 
+			display: block
+			// width: 100%
+			height: 100%
+	.left_arr_slider
+		display: none
+		width: 50px
+		height: 150px
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 10%
+		margin: auto
+		// background-color: blue
+		line-height: 150px
+		text-align: center
+		font-size: 60px
+		font-family: 'Semibold'
+		transition: all 0.5s
+		color: #fff
+		cursor: pointer
+		&:hover
+			color: #aaa
+		img
+			height: 50%
+			transition: filter 0.25s
+			&:hover
+				filter: invert(50%)	
+	.right_arr_slider
+		display: inline-block
+		width: 50px
+		height: 150px
+		position: absolute
+		right: 10%
+		top: 0
+		bottom: 0
+		margin: auto
+		line-height: 150px
+		text-align: center
+		font-size: 60px
+		font-family: 'Semibold'
+		transition: all 0.5s
+		color: #fff
+		cursor: pointer
+		z-index: 1000
+		&:hover
+			color: #aaa
+		img
+			height: 50%
+			transition: filter 0.25s
+			&:hover
+				filter: invert(50%)	
+	
+	.close_btn
+		top: 4%
+		width: 30px
+		height: 30px
+		right: 1.5%
+		// background-color: red
+		position: absolute
+		text-align: center
+		.link
+			height: 50px
+			margin: auto
+			// background-color: blue 
+			text-decoration: none
+			font-family: 'Semibold'
+			color: #fff
+			img
+				width: 100%
+				height: 100%	
+
+#preloader
+	position: fixed
+	z-index: 99999
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: #fff
+	color: #524D48
+	.wrapper
+		background-color: #fff
+		width: 100%
+		height: 100%
+		display: inline-block
+		position: relative
+		bottom: 0
+		top: 0
+		left: 0
+		right: 0
+		margin: auto
+		.pre-loader
+			display: inline-block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 80px
+			height: 80px
+			border-radius: 50%
+			background: linear-gradient(rgba(0, 183, 247, 1) -40%,rgba(178, 178, 170, 0.3) 60%)
+			animation: rotate-right 1.8s linear infinite
+			padding: 5px
+			animation: rotate-left .9s linear infinite
+			.spinner
+				padding: 5px
+				animation:rotate-left .9s linear infinite
+				&:after
+					content: ""
+					display: block
+					width: 60px
+					height: 60px
+					border-radius: 50%
+					background: #f1f1f1
+
+#header_child
+	// height: 500px
+	width: 100%
+	// background-color: cornflowerblue 
+	.main_wrapper
+		background-color: rgba(0,0,0,0.4)
+		// display: inline-block
+		width: 100%
+		height: 100%
+		position: relative
+		.header_top
+			background-color: rgba(0,0,0,0.7)
+			width: 100%
+			height: 80px
+			.menu
+				display: block
+				// background-color: red
+				width: 1200px
+				// min-width: 900px
+				// max-width: 1200px
+				height: 100%
+				margin: auto
+				.logo
+					display: inline-block
+					vertical-align:  middle
+					width: 160px
+					height: 100%
+					// background-color: green
+					float: left
+					img
+						// background-color: #FFF
+						-ms-transform: rotate(10deg) /* IE 9 */
+						-webkit-transform: rotate(10deg) /* Chrome, Safari, Opera */
+						transform: rotate(10deg)
+						// margin: auto
+						margin-top: -3px
+						display: block
+						width: 125px
+						vertical-align: middle
+						display: inline-block
+					.helper
+						vertical-align: middle
+						display: inline-block
+						width: 0px
+						height: 100%
+						// height: 100%
+				.menu_ul
+					float: left
+					display: inline-block
+					width: 800px
+					height: 100%
+					.item_li
+						// background-color: brown
+						width: 25%
+						height: 100%
+						font-size: 20px
+						list-style-type: none
+						float: left
+						text-align: center
+						.item_link
+							letter-spacing: 3.0px
+							display: inline-block
+							vertical-align: middle
+							outline: none
+							text-decoration: none
+							color: #fff
+							font-family: opensanbold
+							&:hover
+								color: $main_color
+								transition: 0.1s
+						.under_line
+							width: 100%
+							margin: auto
+							// background-color: #FFF
+							&:hover
+								-webkit-transition-duration: 250ms, 250ms, 250ms, 250ms
+								border-bottom: 1px solid $main_color
+						.helper
+							display: inline-block
+							vertical-align: middle
+							width: 0px
+							height: 100%	
+				.socials
+					width: 200px
+					height: 100%
+					float: right
+					display: inline-block
+					// background-color: yellow
+					text-align: center
+					.soc_wrapper
+						// background-color: red
+						width: 90%
+						display: inline-block
+						vertical-align: middle
+						height: 40%
+						.soc_link
+							display: inline-block
+							// float: left
+							text-decoration: none
+							color: #fff
+							margin-right: 5%
+							margin-left: 5%
+							width: 20%
+							height: 100%
+							background-size: 100% 100%
+							img
+								width: 100%
+								filter: grayscale(90%)
+								transition: filter 0.25s
+								&:hover
+									transition: filter 0.25s
+									filter: grayscale(0%) brightness(100%)
+					.helper
+						display: inline-block
+						vertical-align: middle
+						width: 0px
+						height: 100%
+
+								
